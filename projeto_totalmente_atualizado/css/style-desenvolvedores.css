@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#dev-titulo{
+    margin-top: 20px;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+}
+
+
+.sec1{
+    margin-top: 0;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+section img{
+    margin-top: 5%;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    margin-right: 50px;
+}
+
+.desenvolvedores{
+    display: flex;
+    margin-bottom: 75px;
+}
+
+.logo{
+    max-width: 75px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+li{
+    list-style: none;
+}
+
+section .git img{
+    margin: 0;
+    width: 110px;
+    height: 60px;
+}
+
+section .linkedin img{
+    margin:0;
+    width: 90px;
+    height: 62px;
+}
+
+
