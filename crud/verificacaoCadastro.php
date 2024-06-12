@@ -2,25 +2,23 @@
 include("conexao.php");
 
 // Capturando os valores do "POST" e transformando em variáveis
-$novNome = $_POST['novoNome'] ?? null;
+$novNome = $_POST['novoNome'] ?? null; //"?? NULL" serve para caso esteja vazio ele preencha o post com vazio
 $novEmail = $_POST['novoEmail'] ?? null;
 $novPass = $_POST['novoPass'] ?? null;
 $novCelular = $_POST['novoCelular'] ?? null;
 $novGenero = $_POST['novoGenero'] ?? null;
 $confirmPass = $_POST['confirmSenha'] ?? null;
 
-// Verificação simples para checar se o campo senha e confirme senha estão iguais
+// Verificação simples para checar se o campo senha e confirme senha, estão iguais
 if ($confirmPass === $novPass) {
-    // Criptografar a senha usando password_hash
-    $hashedPassword = password_hash($novPass, PASSWORD_DEFAULT);
 
     // Preparando a consulta SQL usando prepared statements para evitar injeção de SQL
     $stmt = $conn->prepare(
         "INSERT INTO `login`(`loginNome`, `loginEmail`, `loginSenha`, `loginCelular`, `loginGenero`)
-        VALUES (:loginNome, :loginEmail, :loginSenha, :loginCelular, :loginGenero)"
+         VALUES (:loginNome, :loginEmail, :loginSenha, :loginCelular, :loginGenero)"
     );
-
-    // metodo Bind dos parâmetros
+    $hashedPassword = password_hash($novPass, PASSWORD_DEFAULT);
+    // metodo Bind dos parâmetros para dicionar valor no banco
     $stmt->bindParam(':loginNome', $novNome);
     $stmt->bindParam(':loginEmail', $novEmail);
     $stmt->bindParam(':loginSenha', $hashedPassword);
