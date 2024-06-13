@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Cadastar Produto</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/contato.css">
+
 </head>
+<header> 
+  <?php include("modelos/header.php")?> 
+</header>
 <body>
-<div class="container-img">
-        <div class="form">          
-            <form action="crud/verificacaoCadastro.php" method="post" enctype = "multipart/form-data">
-                <div form="form-header">
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="novoEmail" placeholder="Digite seu email" required>
-                    </div>
-                   
-                    <div class="input-box">
-                        <label for="tetx">Assunto</label>
-                        <textarea id="assunto" name="novoAssunto" ></textarea>
-                    </div>
 
-                    <div class="input-box">
-                        <label for="img"> Arquivo </label>
-                        <input type="file" id="file" name="novoFile">
-                    </div>
 
-                <div class="btn-cadastro">
-                    <button><a href="#">Enviar</a></button>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            
+            <form method ="post" action ="crud/verificarContato.php" enctype="multipart/form-data">
+                <h3>Contato</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="contatoNome" class="form-control" placeholder="Nome Completo*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contatoEmail" class="form-control" placeholder="Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contatoCelular" class="form-control" placeholder="Número *" value="" />
+                        </div>
+                        <div class="input-group">
+                            <input type="file" name="contatoFile" class="form-control" style="margin-bottom: 40px;">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary"  value="Enviar Mensagem" />
+                        </div>
+
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="contatoText" class="form-control" placeholder="Sua Mensagem*" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
                 </div>
             </form>
-        </div>
-    </div>
+</div>
 </body>
+<footer> 
+  <?php include("modelos/footer.php") ?> 
+</footer>
 </html>

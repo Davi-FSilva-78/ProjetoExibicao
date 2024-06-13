@@ -1,52 +1,65 @@
 <?php
     include('conexao.php');
 
-    $contatoNome = $_POST=['contatoNome'];
-    $contatoEmail = $_POST=['contatoEmail'];
-    $contatoCelular = $_POST=['contatoCelular'];
-    $conatoText = $_POST=['novText'];
-    $contatoFile = $_FILES =['novFile'];
+    // Captura dos dados enviados pelo formulário
+    $contatoNome = $_POST['contatoNome'];
+    $contatoEmail = $_POST['contatoEmail'];
+    $contatoCelular = $_POST['contatoCelular'];
+    $contatoText = $_POST['contatoText'];
+    $contatoFile = $_FILES['contatoFile'];
 
+    // Verificando se o arquivo foi enviado e se não ocorreu nenhum erro no upload
+    if (isset($contatoFile) && $contatoFile['error'] == 0) {
 
-    if(isset($_FILES['novFile'])){ //verificando se o arquivo é null
-
-        //Definindo o tamanho maximo do arquivo, sendo sempre em Bytes. 
-        // 1024b = 1kb 
-        // 1024k = 1mb
-        if($contatoFile['size'] > 2097152)
-
-        //Variavel que vai leva os arquivos para a pasta
-        $pasta = "Arquivos/"
-
-        //gerando um nome para salvar o aquivo
-        $nomeArquivo = $novFile['name']
-        $novoNomeArquivo = uniqid();
-
-        //Vamos pegar o caminho do arquivo para saber qual a extensão do aquivo
-        //Strtolower = transforma tudo em letra minuscula
-        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
-
-        if($extensao != "jpg" && $extensao != "png"){
-            exit ("[ERRO] arquivo não atende as solicitações especificadas");
+        // Definindo o tamanho máximo do arquivo (2MB)
+        if ($contatoFile['size'] > 2097152) { // 2MB em bytes
+            exit("[ERRO] Arquivo maior que 2 MB não é permitido.");
         }
 
-        //move_uploaded_file = move os arquivos para uma pasta
-        //tmp_name = gera um nome para o servidor armazena temporariamente o arquivo 
-        $arquivo = move_uploaded_file($contatoFile["tmp_name"],$pasta.$novoNomeArquivo.$extensao);
+        // Variável que vai levar os arquivos para a pasta
+        $pasta = "../img/userFiles/";
 
-        if($arquivo){
+        // Verifica se a pasta existe, se não, cria
+        if (!is_dir($pasta)) {
+          echo " pasta não iniciada";
+        }
+
+        // Gerando um nome para salvar o arquivo
+        $nomeArquivo = $contatoFile['name'];
+        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+        $novoNomeArquivo = uniqid() . "." . $extensao;
+
+        // Verificando a extensão do arquivo
+        if ($extensao != "jpg" && $extensao != "png") {
+            exit("[ERRO] Arquivo não atende as solicitações especificadas.");
+        }
+
+        // Caminho absoluto para a pasta de destino
+        $caminhoCompleto = __DIR__ . '/' . $pasta . $novoNomeArquivo;
+
+        // Movendo o arquivo para a pasta de destino
+        if (move_uploaded_file($contatoFile["tmp_name"], $caminhoCompleto)) {
+            $contatoFilePath = $pasta . $novoNomeArquivo;
+
+            // Preparando a declaração SQL
             $stmt = $conn->prepare(
-                "INSERT INTO `contato`(`contatoNome`, `contatoEmail`, `contatoCelular`, `conatoText`, `contatoFile`)
-                 VALUES (:contatoNome, :contatoEmail, :contatoCelular, :conatoText, :contatoFile)"
+                "INSERT INTO `contato`(`contatoNome`, `contatoEmail`, `contatoNumero`, `contatoAssunto`, `contatoFile`)
+                 VALUES (:contatoNome, :contatoEmail, :contatoNumero, :contatoAssunto, :contatoFile)"
             );
             $stmt->bindParam(':contatoNome', $contatoNome);
             $stmt->bindParam(':contatoEmail', $contatoEmail);
-            $stmt->bindParam(':contatoCelular', $contatoCelular);
-            $stmt->bindParam(':conatoText', $conatoText);
-            $stmt->bindParam(':contatoFile', $contatoFile);
+            $stmt->bindParam(':contatoNumero', $contatoCelular);
+            $stmt->bindParam(':contatoAssunto', $contatoText);
+            $stmt->bindParam(':contatoFile', $contatoFilePath);
 
-            $stmt->execute()
+            $stmt->execute();
+
+            // Redirecionamento após a inserção bem-sucedida
+            header("Location: ../painel.php");
+        } else {
+            exit("[ERRO] Falha ao mover arquivo.");
         }
-        //var_dump($_FILES['novFile']); //Mostra na saída uma informçãoes sobre o elemento
+    } else {
+        exit("[ERRO] Nenhum arquivo foi enviado ou ocorreu um erro no upload.");
     }
 ?>

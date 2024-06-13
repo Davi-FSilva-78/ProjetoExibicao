@@ -16,7 +16,7 @@
             </button>
         </div>
         <div class="button-sair">
-            <a href="sair.php" class="btn btn-danger me-5">Sair</a> <!-- comando sair para retornar a pagima de login do usuario no sistema -->
+            <a href="index.php" class="btn btn-danger me-5">Sair</a> <!-- comando sair para retornar a pagima de login do usuario no sistema -->
         </div>
     </nav>
     <br>
@@ -30,8 +30,9 @@
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
       <th scope="col">Celular</th>
-      <th scope="col">Genero</th>
-      <th scope="col">Senha</th>
+      <th scope="col">Assunto</th>
+      <th scope="col">Arquivo</th>
+      
     </tr>
     </thead>
     <tbody>

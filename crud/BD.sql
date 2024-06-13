@@ -6,9 +6,11 @@ use projeto01;
 
 create table contato(
     idContato int PRIMARY KEY AUTO_INCREMENT,
+    contatoNome varchar(50),
     contatoEmail varchar(50),
-    contatoAssunto varchar(500),
-    conatatoFile longblob
+    contatoNumero int, 
+    contatoFile varchar(100),
+    contatoAssunto varchar(500)
 )
 
 create table login(
