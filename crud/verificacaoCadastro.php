@@ -2,7 +2,8 @@
 include("conexao.php");
 
 // Capturando os valores do "POST" e transformando em variáveis
-$novNome = $_POST['novoNome'] ?? null; //"?? NULL" serve para caso esteja vazio ele preencha o post com vazio
+//"?? NULL" serve para caso esteja vazio ele preencha o post com vazio
+$novNome = $_POST['novoNome'] ?? null; 
 $novEmail = $_POST['novoEmail'] ?? null;
 $novPass = $_POST['novoPass'] ?? null;
 $novCelular = $_POST['novoCelular'] ?? null;

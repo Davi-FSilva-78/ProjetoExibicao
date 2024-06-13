@@ -1,6 +1,8 @@
 <?php
     include('conexao.php');
 
+    session_start();
+
     // Captura dos dados enviados pelo formulário
     $contatoNome = $_POST['contatoNome'];
     $contatoEmail = $_POST['contatoEmail'];
@@ -12,6 +14,9 @@
     if (isset($contatoFile) && $contatoFile['error'] == 0) {
 
         // Definindo o tamanho máximo do arquivo (2MB)
+        //Definindo o tamanho maximo do arquivo, sendo sempre em Bytes. 
+        // 1024b = 1kb 
+        // 1024k = 1mb
         if ($contatoFile['size'] > 2097152) { // 2MB em bytes
             exit("[ERRO] Arquivo maior que 2 MB não é permitido.");
         }
@@ -38,6 +43,7 @@
         $caminhoCompleto = __DIR__ . '/' . $pasta . $novoNomeArquivo;
 
         // Movendo o arquivo para a pasta de destino
+        // tmp_name = gera um nome para o servidor armazena temporariamente o arquivo 
         if (move_uploaded_file($contatoFile["tmp_name"], $caminhoCompleto)) {
             $contatoFilePath = $pasta . $novoNomeArquivo;
 
