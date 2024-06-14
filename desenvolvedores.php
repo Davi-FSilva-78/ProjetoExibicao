@@ -9,7 +9,13 @@
 <body>
 
     <?php 
-        include("modelos/header.php")
+        session_start();
+        if(isset($_SESSION['acesso'])==true) {
+         include("modelos/headerLog.php");
+          
+        } else{
+          include("modelos/header.php");
+        }
     ?>
  
  <h1 id="dev-titulo">Sobre Nós</h1>

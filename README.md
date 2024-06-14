@@ -24,3 +24,5 @@ A.3
     - adiciona lógica para transformar img adiciona nos files em código,
     - adiciona lógica para colocar código de img no banco de dados,
     -adiciona lógica para colocar img em pasta no projeto.
+ 
+ A.4

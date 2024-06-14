@@ -9,7 +9,15 @@
 
 </head>
 <header> 
-  <?php include("modelos/header.php")?> 
+  <?php session_start();
+  if(isset($_SESSION['acesso'])==true) {
+   include("modelos/headerLog.php");
+    
+  } else{
+    include("modelos/header.php");
+  }
+  ?> 
+  
 </header>
 <body>
 

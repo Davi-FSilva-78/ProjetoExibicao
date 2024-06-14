@@ -8,6 +8,13 @@
     <title>Painel</title>
 </head>
 <?php
+session_start();
+if(isset($_SESSION['acesso'])==true) {
+ include("modelos/headerLog.php");
+  
+} else{
+  include("modelos/header.php");
+}
 
 include("crud/conexao.php"); ?>
 

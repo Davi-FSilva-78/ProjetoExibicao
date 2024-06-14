@@ -17,12 +17,13 @@
                 <ul id="lista">
                     <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="desenvolvedores.php" class="nav-link">Sobre Nós</a></li>
-                   
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="painel.php" class="nav-link">Painel</a></li>
                 </ul>
             </div>
             <div class="btn-login">
-            <a href="login.php"><button type="button" class="btn btn-primary">Entrar</button></a>
-            <a href="cadastro.php"><button type="button" class="btn btn-outline-light">Cadastrar</button></a>
+            <a href="modelos/sessionLogout.php"><button type="button" class="btn btn-primary"> Sair </button></a>
+            
             </div>   
         </nav>
     </header>
