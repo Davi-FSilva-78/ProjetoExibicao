@@ -20,14 +20,14 @@
 }
 .rodape-div{
     display: flex;
-    flex-wrap: wrap;
     width:100%;
     margin: auto;
-    align-items: stretch;
+    align-items: center;
     padding: 60px 10px 40px 10px;
 }
 .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
     display: flex;
+
     width: calc(100% / 4 - 20px);
     padding: 10px;
 }
@@ -37,9 +37,9 @@
 }
 .rodape-direitos{
     width: 100%;
-    background-color: black;
+    background-color: #1f1e1e;
     padding: 10px;
-    margin: 0px;
+    margin-top: 20px;
     text-align: center;
 }
 .logo-footer{

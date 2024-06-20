@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastar Produto</title>
+    <title>Projeto Painel de informações</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="css/contato.css">
 
@@ -43,7 +43,7 @@
                             <input type="text" name="contatoCelular" class="form-control" placeholder="Número *" value="" />
                         </div>
                         <div class="input-group">
-                            <input type="file" name="contatoFile" class="form-control" style="margin-bottom: 40px;">
+                            <input type="file" name="contatoFile" class="form-control" accept="image/*" style="margin-bottom:50px;">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary"  value="Enviar Mensagem" />
@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <textarea name="contatoText" class="form-control" placeholder="Sua Mensagem*" style="width: 100%; height: 150px;"></textarea>
+                            <textarea name="contatoText" class="form-control" placeholder="Sua Mensagem*" style="width: 100%; height: 200px;"></textarea>
                         </div>
                     </div>
                 </div>

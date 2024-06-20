@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
-    <title>Cadastro</title>
+    <title>Projeto Painel de informações</title>
 </head>
 <body>
     
@@ -42,7 +42,7 @@
                     
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input type="tel" id="celular" name="novoCelular" placeholder="(xx) xxxxx-xxxx">
+                        <input type="tel" id="celular" name="novoCelular" placeholder="(xx) xxxxx-xxxx" minlength ="14">
                     </div>
 
                     <div class="input-box">

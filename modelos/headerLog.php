@@ -19,6 +19,7 @@
                     <li class="nav-item"><a href="desenvolvedores.php" class="nav-link">Sobre Nós</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
                     <li class="nav-item"><a href="painel.php" class="nav-link">Painel</a></li>
+                    <li class="nav-item"><a href="crud/API.php" class="nav-link">API</a></li>
                 </ul>
             </div>
             <div class="btn-login">
