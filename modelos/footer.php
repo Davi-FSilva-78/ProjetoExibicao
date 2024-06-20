@@ -44,9 +44,9 @@
                 <p>Políticas de Privacidade</p>
             </div>
         </div>
-
+        <p class="rodape-direitos">Copyright © 2024 – Todos os Direitos Reservados.</p>
     </div>
-    <p class="rodape-direitos">Copyright © 2024 – Todos os Direitos Reservados.</p>
+    
 </footer>
     
 </body>
