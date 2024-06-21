@@ -8,13 +8,6 @@
 </head>
 <body>
 
-<script> //Função Javascript para redirecionar de volta ao painel
-    function redirecionar(){
-    setTimeout(function(){
-        window.location.href='../painel.php'; //local para qual o usuário será redirecionado
-    },5000); //tempo até o redirecionamento em milissegundos
-    }
-    </script>
     
 <?php
 include("conexao.php");
@@ -26,18 +19,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['id']) && isset($_POST['a
     $action = $_POST['action'];
     $id = $_POST['id'];
 
-    if($action=='del'){  //verifica qual o valor(value) do botão pressionado. Se 'del', função deletarContato(dContato)
-        dContato($conn, $id); //variáveis a serem usadas na função
-       echo "<script> window.onload = redirecionar; </script>"; //utiliza a função di js para redirecionar
+    if($action=='del'){  
+        //verifica qual o valor(value) do botão pressionado. Se 'del', função deletarContato(dContato)
+        header("location:delProcess.php?idContato=".$id);
+    }
 
-    } elseif($action=='edit'){ //se o value for 'edit', redireciona para uma página de edição
-    header("Location: ../editarContato.php?idContato=".$id); //envia o usuário para a pagina de edição de contato e oi valor da de $id
+
+     elseif($action=='edit'){ //se o value for 'edit', redireciona para uma página de edição
+    header("location: ../editarContato.php?idContato=".$id); //envia o usuário para a pagina de edição de contato e oi valor da de $id
     exit();
-
 }
-
-
-
 }
 
 ?>

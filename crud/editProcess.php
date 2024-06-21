@@ -65,7 +65,7 @@ $oldImage = $stmt->fetchColumn();
     $novoNomeArquivo = uniqid() . "." . $extensao;
 
     // Verificando a extensão do arquivo
-    if ($extensao != "jpg" && $extensao != "png") {
+    if ($extensao != "jpeg" && $extensao != "png" && $extensao !="jpg") {
         exit("[ERRO] Arquivo não atende as solicitações especificadas.");
     }
 
