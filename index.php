@@ -36,7 +36,7 @@
         <img src="img/vestibular-fatec.jpg" class="d-block w-100" alt="..." height="750px" >
         </div>
       <div class="carousel-item">
-        <img src="img/titulo-eleitor.jpg" class="d-block w-100" alt="..."  height="750px">
+        <img src="img/titulo-eleitor.jpg" class="d-block w-100" a lt="..."  height="750px">
     </div>
 
     </div>

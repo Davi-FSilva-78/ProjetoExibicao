@@ -18,7 +18,11 @@ if(isset($_SESSION['acesso'])==true) {
   include("modelos/header.php");
 }
 
-include("crud/conexao.php"); ?>
+include("crud/conexao.php"); 
+
+?>
+
+
 
    <?php
        $stmt = $conn->prepare("select * from contato order by idContato desc");
@@ -28,30 +32,45 @@ include("crud/conexao.php"); ?>
    <table class="table table-striped">
        <thead>
            <tr>
-           <th scope="col">#</th>
                <th scope="col">Nome</th>
                <th scope="col">E-mail</th>
                <th scope="col">Celular</th>
                <th scope="col">Assunto</th>
                <th scope="col">Arquivo</th>
+               <th scope="col">Imagem</th>
+               <th scope="col">Editar</th>
+               <th scope="col">Excluir</th>
            </tr>
+
+    <script>
+      function confirmar() {
+        return confirm("Você tem certeza que deseja deletar este contato?");
+    }
+    </script>
+    
      </thead>
      <tbody>    
        <?php
            while($row = $stmt->fetch()) {
-            echo "<tr>";
-                echo "<td> $row[idContato] </td>";                             
+            echo "<tr>";                         
                 echo "<td> $row[contatoNome] </td>";
                 echo "<td> $row[contatoEmail] </td>";
                 echo "<td> $row[contatoNumero] </td>";
                 echo "<td> $row[contatoAssunto] </td>";
-                echo "<td> $row[contatoFile] </td>";  
+                echo "<td> $row[contatoFile] </td>";
+              
+                echo "<td>
+                 
+                  <img src=ProjetoExibicao/" . "$row[contatoFile] height='70px' width='70px'/> 
+                 
+                 </td>";
+               
                 echo "<td>
                 <form class='painel-form' method='post' action='crud/UD.php'>
                   <input type='hidden' name='id' value='$row[idContato]'/>
-                      <button type='submit' name='action' value='edit' class='btn-UD'>
+                    <button type='submit' name='action' value='edit' class='btn-UD'>
                       <img src='img/edit-button-svgrepo-com.svg'/>
-                      </button>
+                    </button>
                   </form>
                   </td> ";
                 echo"<td>
@@ -64,6 +83,7 @@ include("crud/conexao.php"); ?>
                 echo "</td>";
             echo "</tr>";
            }
+           
        ?>
      </tbody>
    </table>

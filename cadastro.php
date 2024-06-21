@@ -42,7 +42,7 @@
                     
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input type="tel" id="celular" name="novoCelular" placeholder="(xx) xxxxx-xxxx" minlength ="14">
+                        <input type="tel" id="celular" name="novoCelular" placeholder="(xx) xxxxx-xxxx" minlength ="12">
                     </div>
 
                     <div class="input-box">

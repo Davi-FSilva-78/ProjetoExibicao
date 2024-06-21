@@ -18,8 +18,16 @@ th{
     background-color: #000000 !important;
 }
 
-img{
-    width: 20px;
-    height: 20px;
+.btn-UD img{
+    width: 25px;
+    height: 25px;
     border: none;
+}
+
+.btn-UD {
+    border: none;
+}
+td img{
+    width:20px;
+    height:20px;
 }

@@ -74,24 +74,20 @@ $contatoFileOld;
                             <input type="text" name="contatoEmail" class="form-control" placeholder="novo Email *" value="<?php echo $contatoEmail ?>" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="contatoCelular" class="form-control" placeholder="Novo número *" value="<?php echo $contatoCelular ?>" />
+                            <input type="text" name="contatoCelular" class="form-control"  placeholder="(xx) xxxxx-xxxx" value="<?php echo $contatoCelular ?>"  minlength ="12" />
                         </div>
                         <h4>sua imagem </h4>
                             </br>
                             <img src="<?php echo 'ProjetoExibicao/'.$contatoFileOld?> " height="200px" width="200px" class="sua_imagem"/>
                             
-                        <?php /* ------------>Mostrar a antiga imagem aqui<------------------
                         
                         <div class="input-group">
-                            <input type="file" name="contatoFile" class="form-control" style="margin-bottom: 40px;" value="<?php echo $contatoFileOld ?>">
-                        </div> */?>
-                        
-                        <div class="input-group">
-                            <input type="file" name="contatoFileNew" class="form-control" style="margin: 40px 0px 40px; " value="<?php echo $contatoFileOld ?>">
+                            <input type="file" name="contatoFileNew" class="form-control" style="margin: 40px 0px 40px; " value="<?php echo $contatoFileOld ?>" width= "20px" height=" 20px">
                         </div>
                         
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary"  value="Atualizar" />
+                            <a input type="submit" class="btn btn-secondary"  value="Cancelar" href="painel.php">Cancelar</a>
                         </div>
 
                         

@@ -27,7 +27,7 @@
                     <img class="foto" src="img/Davi.png" alt="Davi">
                     <p>Davi</p>            
                     <p>20 anos</p> 
-                    <p>Atuou na criação da página "cadastro" </br> e criou o header.</p>
+                    <p>Desenvolvedor Back-end</p>
 
                     <div class="logo-tipo">
                         <li><a href="#" class="git"> <img src="img/git.png" alt="git" > </a></li>                     
@@ -39,8 +39,8 @@
                 <div class="dev-cris">
                     <img class="foto" src="img/Cris.png" alt="Cristhyan">
                     <p>Cristhyan</p>
-                    <p>17 anos</p>
-                    <p>Atuoou na criação da página de "contato" </br>utilizando banco de dados.</p>
+                    <p>18 anos</p>
+                    <p>Desenvolvedor Back-end</p>
 
                     <div class="logo-tipo">
                         <li><a href="#" class="git"> <img src="img/git.png" alt="git" > </a></li>
@@ -51,7 +51,7 @@
                     <img class="foto" src="img/giovanni.jpg" alt="Giovanni">
                     <p>Giovanni Seloto</p>
                     <p>18 anos</p>
-                    <p>Atuou na criação da página "desenvolvedores" </br>e criou o footer.</p>
+                    <p>Desenvolvedor Back-end</p>
 
                     <div class="logo-tipo">
                         <li><a href="#" class="git"> <img src="img/git.png" alt="git" > </a></li>
@@ -63,7 +63,7 @@
                     <img class="foto" src="img/Caua.png" alt="Caua">
                     <p>Cauã</p>
                     <p>19 anos</p>
-                    <p> Auxiliou na criação da página index e no CSS.</p>
+                    <p> Desenvolvedor Front-end</p>
 
                     <div class="logo-tipo">
                         <li><a href="#" class="git"> <img src="img/git.png" alt="git" > </a></li>
@@ -72,10 +72,10 @@
                 </div>
 
                 <div class="dev-claudino">
-                    <img class="foto" src="img/Caua.png" alt="Caua">
+                    <img class="foto" src="img/claudino.jpg" alt="Caua">
                     <p>Guilherme Claudino</p>
                     <p>22 anos</p>
-                    <p>Desenvolvedor</p>
+                    <p>Desenvolvedor Front-end</p>
 
                     <div class="logo-tipo">
                         <li><a href="#" class="git"> <img src="img/git.png" alt="git" > </a></li>
